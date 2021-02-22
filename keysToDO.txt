@@ -1,0 +1,15 @@
+  Home CHECK
+  Rev
+  Fwd
+  Play
+  Select CHECK
+  Left CHECK
+  Right CHECK
+  Down CHECK
+  Up CHECK
+  Back CHECK
+  InstantReplay
+  Info
+  Backspace
+  Search
+  Enter 
