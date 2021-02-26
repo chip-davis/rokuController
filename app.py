@@ -24,6 +24,7 @@ r = Remote()
 
 @app.route('/')
 def execute():
+
     r.scan()
     return render_template('displayTVs.html', tvs = json_data)
 
@@ -31,10 +32,12 @@ def execute():
 def handle_data():
     ip = request.form['tv']
     r.ip=ip
-    return redirect(url_for('command', cmd="Home"))
+    print(r.ip)
+    return redirect(url_for('command', cmd="Home", remote = r))
 
 @app.route('/commands/<cmd>/')
-def command(cmd=None):
+def command( remote=None, cmd=None):
+    r = remote
     r.pressButton(cmd)
     return render_template("main.html" , commands = AVAIALABLE_COMMANDS)
 
